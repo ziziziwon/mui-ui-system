@@ -1,46 +1,226 @@
-# Getting Started with Create React App
+# MUI Portfolio Dashboard
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+React와 Material-UI로 구축된 현대적인 대시보드 애플리케이션입니다. 재사용 가능한 UI 컴포넌트, 테마 시스템, 반응형 레이아웃을 제공합니다.
 
-## Available Scripts
+## 📋 목차
 
-In the project directory, you can run:
+- [주요 기능](#주요-기능)
+- [기술 스택](#기술-스택)
+- [프로젝트 구조](#프로젝트-구조)
+- [시작하기](#시작하기)
+- [주요 페이지](#주요-페이지)
+- [컴포넌트](#컴포넌트)
+- [테마 시스템](#테마-시스템)
+- [빌드 및 배포](#빌드-및-배포)
 
-### `npm start`
+## ✨ 주요 기능
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- 🎨 **다크 모드 지원**: 라이트/다크 모드 전환 기능
+- 📊 **대시보드**: KPI 카드, 차트, 테이블로 구성된 종합 대시보드
+- 📈 **애널리틱스**: 고객 목록 및 성과 분석 페이지
+- 📅 **캘린더**: 월/주/일/년 단위 뷰를 지원하는 캘린더
+- 🎯 **반응형 디자인**: 모바일, 태블릿, 데스크톱 최적화
+- 🧩 **재사용 가능한 컴포넌트**: 차트, 레이아웃, 섹션 컴포넌트
+- 🎭 **MUI + Tailwind 통합**: 두 스타일 시스템의 조화
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 🛠 기술 스택
 
-### `npm test`
+### 핵심 프레임워크
+- **React** 18.2.0
+- **TypeScript** 4.9.5
+- **React Router DOM** 6.30.1
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### UI 라이브러리
+- **Material-UI (MUI)** 7.3.2
+  - `@mui/material`
+  - `@mui/icons-material`
+  - `@emotion/react`
+  - `@emotion/styled`
 
-### `npm run build`
+### 스타일링
+- **Tailwind CSS** (PostCSS 기반)
+- **MUI Theme System**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 차트
+- **Chart.js** 4.5.0
+- **react-chartjs-2** 5.3.0
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 개발 도구
+- **Create React App** 5.0.1
+- **npm-run-all** (동시 실행용)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 📁 프로젝트 구조
 
-### `npm run eject`
+```
+muipofol/
+├── public/                 # 정적 파일
+├── src/
+│   ├── assets/            # 이미지 및 에셋
+│   ├── charts/            # 차트 컴포넌트
+│   │   ├── Bars.tsx
+│   │   ├── Donut.tsx
+│   │   ├── LineArea.tsx
+│   │   └── register.ts    # Chart.js 등록
+│   ├── components/        # 공통 컴포넌트
+│   │   └── TaskTimeline.tsx
+│   ├── layout/            # 레이아웃 컴포넌트
+│   │   ├── MainLayout.tsx
+│   │   └── Sidebar.tsx
+│   ├── pages/             # 페이지 컴포넌트
+│   │   ├── Dashboard.tsx
+│   │   ├── Analytics.tsx
+│   │   ├── Calendar.tsx
+│   │   ├── Settings.tsx
+│   │   ├── Portpolio.tsx
+│   │   └── NotFound.tsx
+│   ├── sections/          # 페이지 섹션
+│   │   ├── RecentOrders.tsx
+│   │   └── TopProducts.tsx
+│   ├── App.tsx            # 메인 앱 컴포넌트
+│   ├── AppRoutes.tsx      # 라우팅 설정
+│   ├── index.tsx          # 진입점
+│   ├── index.css          # 글로벌 스타일
+│   └── theme.ts           # MUI 테마 설정
+├── tailwind.config.js     # Tailwind 설정
+├── postcss.config.js      # PostCSS 설정
+└── package.json
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## 🚀 시작하기
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 사전 요구사항
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- Node.js 14.0.0 이상
+- npm 또는 yarn
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### 설치
 
-## Learn More
+1. 저장소 클론
+```bash
+git clone https://github.com/ziziziwon/mui-ui-system.git
+cd muipofol
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+2. 의존성 설치
+```bash
+npm install
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+3. 개발 서버 실행
+```bash
+npm run dev
+```
+
+개발 서버는 `http://localhost:3000`에서 실행됩니다.
+
+### 사용 가능한 스크립트
+
+- `npm start`: React 개발 서버만 실행
+- `npm run dev`: Tailwind CSS 감시 모드와 React 서버 동시 실행
+- `npm run tw`: Tailwind CSS만 감시 모드로 실행
+- `npm run build`: 프로덕션 빌드 생성
+
+## 📄 주요 페이지
+
+### Dashboard (`/mui`)
+- KPI 카드: 제품 통계 및 증감률 표시
+- Reports 차트: Line Area 차트
+- Analytics 차트: Donut 차트
+- Recent Orders: 최근 주문 테이블
+- Top Products: 인기 제품 목록
+
+### Analytics (`/analytics`)
+- 고객 목록 테이블
+- 고객 상세 정보 카드
+- 성과 지표 (만족도, 유지율)
+- 성능 차트 (Bar 차트)
+
+### Calendar (`/calendar`)
+- 월별 캘린더 뷰
+- Day/Week/Month/Year 뷰 전환
+- 이벤트 태그 표시
+- 미니 캘린더 및 사람 검색
+
+### Settings (`/settings`)
+설정 페이지 (구현 예정)
+
+### Portfolio (`/portfolio`)
+포트폴리오 페이지 (구현 예정)
+
+## 🧩 컴포넌트
+
+### 차트 컴포넌트
+
+- **LineArea**: 영역 라인 차트
+- **Donut**: 도넛 차트
+- **Bars**: 막대 차트 (TinyBars 포함)
+
+모든 차트는 Chart.js를 사용하며 `charts/register.ts`에서 설정됩니다.
+
+### 레이아웃 컴포넌트
+
+- **MainLayout**: 메인 레이아웃 (Sidebar + Outlet)
+- **Sidebar**: 좌측 사이드바 네비게이션
+
+### 섹션 컴포넌트
+
+- **RecentOrders**: 최근 주문 테이블
+- **TopProducts**: 인기 제품 목록
+
+## 🎨 테마 시스템
+
+### 다크 모드
+- 로컬 스토리지에 테마 모드 저장
+- 상단 우측 아이콘 버튼으로 전환
+- MUI Theme과 Tailwind CSS 변수 동기화
+
+### 색상 팔레트
+- **라이트 모드**
+  - Primary: `#6366f1` (Indigo-500)
+  - Secondary: `#10b981` (Emerald-500)
+  - Background: `#f6f7fb`
+  - Paper: `#ffffff`
+
+- **다크 모드**
+  - Primary: `#8b9cff` (Indigo-300)
+  - Secondary: `#34d399` (Emerald-400)
+  - Background: `#0b1220`
+  - Paper: `#0f172a`
+
+### 커스텀 스타일
+- CSS 변수를 사용한 테마 동기화
+- `.bg-soft`, `.bg-paper`, `.shadow-card`, `.text-muted` 유틸리티 클래스
+- 다크 모드 자동 적용
+
+## 📦 빌드 및 배포
+
+### 프로덕션 빌드
+
+```bash
+npm run build
+```
+
+빌드 결과는 `build/` 폴더에 생성됩니다.
+
+### 배포 설정
+
+`package.json`에 `homepage: "/mui"`가 설정되어 있어 서브 경로 배포를 지원합니다.
+
+## 🔗 링크
+
+- GitHub 저장소: [https://github.com/ziziziwon/mui-ui-system.git](https://github.com/ziziziwon/mui-ui-system.git)
+- 포트폴리오: [https://jjw0144.mycafe24.com](https://jjw0144.mycafe24.com)
+
+## 📝 라이선스
+
+MIT License
+
+Copyright (c) 2025 jeongjiwon
+
+## 👤 작성자
+
+jeongjiwon
+
+---
+
+**참고**: 이 프로젝트는 Create React App으로 부트스트랩되었습니다.
