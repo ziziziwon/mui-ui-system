@@ -209,7 +209,7 @@ npm run build
 ## 🔗 링크
 
 - GitHub 저장소: [https://github.com/ziziziwon/mui-ui-system.git](https://github.com/ziziziwon/mui-ui-system.git)
-- 포트폴리오: [https://jjw0144.mycafe24.com](https://jjw0144.mycafe24.com/mui/)
+- 포트폴리오: [https://jjw0144.mycafe24.com/mui/](https://jjw0144.mycafe24.com/mui/)
 
 ## 📝 라이선스
 
