@@ -112,7 +112,7 @@ export default function Sidebar() {
 
         {/* 🔗 외부 링크 예시: 새 탭으로 포트폴리오 열기 */}
         <NavIcon
-          to="https://jjw0144.mycafe24.com"
+          to="https://jjw0144.mycafe24.com/myportfolio/"
           title="Portfolio"
           newTab={false}
         >
